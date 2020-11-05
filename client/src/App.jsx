@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
 
 const App = () => {
-    return ( 
-        <div>
-            Hello World!
-        </div>
-    );
-}
+  return (
+    <body>
+      <Grid container direction="row">
+        <Grid item xs={12} md={6}>
+          Hello Cryps?
+        </Grid>
+      </Grid>
+    </body>
+  );
+};
 
 export default App;
