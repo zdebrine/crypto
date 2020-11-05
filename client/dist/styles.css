@@ -9,3 +9,8 @@ body #light-mode {
     background-color: rgb(255, 255, 255);
     color: rgb(4, 4, 20);
 }
+
+h1 {
+    color: #00ff88;
+    font-family: monospace;
+}
