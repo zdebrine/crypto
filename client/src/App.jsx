@@ -7,7 +7,7 @@ const App = () => {
     <body>
       <h1>BTC</h1>
       <Grid container direction="row">
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={8}>
           <TimeSeriesCard />
         </Grid>
       </Grid>

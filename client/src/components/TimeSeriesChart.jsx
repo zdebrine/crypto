@@ -2,7 +2,8 @@ import React, { useEffect, useState, createRef } from "react";
 import Grid from "@material-ui/core";
 import Chart from "chart.js";
 
-const TimeSeriesChart = () => {
+const TimeSeriesChart = (props) => {
+  console.log(props);
   const chartRef = createRef();
   let shade = "#00ff88";
 
@@ -12,20 +13,12 @@ const TimeSeriesChart = () => {
       type: "line",
       layout: {},
       data: {
-        labels: [
-          "sunday",
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday",
-          "friday",
-          "saturday",
-        ],
+        labels: props.data.timestamps,
 
         datasets: [
           {
-            label: "BTC Price",
-            data: [5000, 2000, 1569, 2265, 8566, 4432, 4400, 2051, 5900],
+            label: `${props.data.currency} Price`,
+            data: props.data.prices,
             //backgroundColor: [shade],
             borderColor: [shade],
             borderWidth: 1,
@@ -41,6 +34,11 @@ const TimeSeriesChart = () => {
               },
             },
           ],
+          xAxes: [{
+            ticks: {
+                display: false //this will remove only the label
+            }
+        }],
         },
       },
     });
