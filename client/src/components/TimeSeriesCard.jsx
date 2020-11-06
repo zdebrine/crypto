@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from "react";
-import Grid from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import Grid from "@material-ui/core/Grid";
 // import { getCurrencyData } from '../../lib/routes.js';
-import axios from 'axios';
+import axios from "axios";
 import TimeSeriesChart from "./TimeSeriesChart.jsx";
 
-const TimeSeriesCard = () => {
+const TimeSeriesCard = ({ currencies, view }) => {
+  const [data, setData] = useState([]);
 
-    const [currency, setCurrency] = useState('BTC');
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        axios.get(
-            `/prices/${currency}`)
-            .then((response) => setData(response.data[0]))
-            .catch((err) => console.error(err));
-      }, []);
+  useEffect(() => {
+    axios
+      .get(`/prices/${view}`)
+      .then((response) => setData(response.data[0]))
+      .catch((err) => console.error(err));
+  }, [view]);
 
   return (
     <div>

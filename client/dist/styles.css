@@ -14,3 +14,9 @@ h1 {
     color: #00ff88;
     font-family: monospace;
 }
+
+.stats {
+    background-color: rgb(8, 8, 37);
+    border-radius: 2%;
+    padding: 5%;
+}
